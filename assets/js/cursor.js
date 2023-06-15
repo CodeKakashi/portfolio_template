@@ -1,130 +1,123 @@
-var cursor = {
-  delay: 8,
-  _x: 0,
-  _y: 0,
-  endX: window.innerWidth / 2,
-  endY: window.innerHeight / 2,
-  cursorVisible: true,
-  cursorEnlarged: false,
-  $dot: document.querySelector(".cursor-dot"),
-  $outline: document.querySelector(".cursor-dot-outline"),
-  lastScrolledLeft : 0, // For changing position of cursor with scrolling
-  lastScrolledTop : 0,  // For changing position of cursor with scrolling
-
-  init: function () {
-    // Set up element sizes
-    this.dotSize = this.$dot.offsetWidth;
-    this.outlineSize = this.$outline.offsetWidth;
+class Cursor {
+  constructor() {
+    this.delay = 8;
+    this._x = 0;
+    this._y = 0;
+    this.endX = window.innerWidth / 2;
+    this.endY = window.innerHeight / 2;
+    this.cursorVisible = true;
+    this.cursorEnlarged = false;
+    this.$dot = document.querySelector(".cursor-sun");
+    this.$outline = document.querySelector(".cursor-sun-outline");
+    this.lastScrolledLeft = 0; // For changing position of cursor with scrolling
+    this.lastScrolledTop = 0; // For changing position of cursor with scrolling
 
     this.setupEventListeners();
     this.animateDotOutline();
-  },
+  }
 
-  setupEventListeners: function () {
-    var self = this;
+  init() {
+    // Set up element sizes
+    this.dotSize = this.$dot.offsetWidth;
+    this.outlineSize = this.$outline.offsetWidth;
+  }
 
+  setupEventListeners() {
     // Anchor hovering
-    document.querySelectorAll("a").forEach(function (el) {
-      el.addEventListener("mouseover", function () {
-        self.cursorEnlarged = true;
-        self.toggleCursorSize();
+    document.querySelectorAll("a").forEach((el) => {
+      el.addEventListener("mouseover", () => {
+        this.cursorEnlarged = true;
+        this.toggleCursorSize();
       });
-      el.addEventListener("mouseout", function () {
-        self.cursorEnlarged = false;
-        self.toggleCursorSize();
+      el.addEventListener("mouseout", () => {
+        this.cursorEnlarged = false;
+        this.toggleCursorSize();
       });
     });
 
     // Click events
-    document.addEventListener("mousedown", function () {
-      self.cursorEnlarged = true;
-      self.toggleCursorSize();
+    document.addEventListener("mousedown", () => {
+      this.cursorEnlarged = true;
+      this.toggleCursorSize();
     });
-    document.addEventListener("mouseup", function () {
-      self.cursorEnlarged = false;
-      self.toggleCursorSize();
+    document.addEventListener("mouseup", () => {
+      this.cursorEnlarged = false;
+      this.toggleCursorSize();
     });
 
-    document.addEventListener("mousemove", function (e) {
+    document.addEventListener("mousemove", (e) => {
       // Show the cursor
-      self.cursorVisible = true;
-      self.toggleCursorVisibility();
+      this.cursorVisible = true;
+      this.toggleCursorVisibility();
 
       // Position the dot
-      self.endX = e.pageX;
-      self.endY = e.pageY;
-      self.$dot.style.top = self.endY + "px";
-      self.$dot.style.left = self.endX + "px";
+      this.endX = e.pageX;
+      this.endY = e.pageY;
+      this.$dot.style.top = this.endY + "px";
+      this.$dot.style.left = this.endX + "px";
     });
 
     // Hide/show cursor
-    document.addEventListener("mouseenter", function (e) {
-      self.cursorVisible = true;
-      self.toggleCursorVisibility();
-      self.$dot.style.opacity = 1;
-      self.$outline.style.opacity = 1;
+    document.addEventListener("mouseenter", (e) => {
+      this.cursorVisible = true;
+      this.toggleCursorVisibility();
+      this.$dot.style.opacity = 1;
+      this.$outline.style.opacity = 1;
     });
 
-    document.addEventListener("mouseleave", function (e) {
-      self.cursorVisible = true;
-      self.toggleCursorVisibility();
-      self.$dot.style.opacity = 0;
-      self.$outline.style.opacity = 0;
+    document.addEventListener("mouseleave", (e) => {
+      this.cursorVisible = true;
+      this.toggleCursorVisibility();
+      this.$dot.style.opacity = 0;
+      this.$outline.style.opacity = 0;
     });
 
     // Change position of cursor with scrolling
-    document.addEventListener('scroll', function (e) {
-
-      if (self.lastScrolledLeft != $(document).scrollLeft()) {
-        self.endX -= self.lastScrolledLeft;
-        self.lastScrolledLeft = $(document).scrollLeft();
-        self.endX += self.lastScrolledLeft;
+    document.addEventListener("scroll", (e) => {
+      if (this.lastScrolledLeft != $(document).scrollLeft()) {
+        this.endX -= this.lastScrolledLeft;
+        this.lastScrolledLeft = $(document).scrollLeft();
+        this.endX += this.lastScrolledLeft;
       }
-      if (self.lastScrolledTop != $(document).scrollTop()) {
-        self.endY -= self.lastScrolledTop;
-        self.lastScrolledTop = $(document).scrollTop();
-        self.endY += self.lastScrolledTop;
+      if (this.lastScrolledTop != $(document).scrollTop()) {
+        this.endY -= this.lastScrolledTop;
+        this.lastScrolledTop = $(document).scrollTop();
+        this.endY += this.lastScrolledTop;
       }
-      self.$dot.style.top = self.endY + "px";
-      self.$dot.style.left = self.endX + "px";
-
+      this.$dot.style.top = this.endY + "px";
+      this.$dot.style.left = this.endX + "px";
     });
-  },
+  }
 
-  animateDotOutline: function () {
-    var self = this;
+  animateDotOutline() {
+    this._x += (this.endX - this._x) / this.delay;
+    this._y += (this.endY - this._y) / this.delay;
+    this.$outline.style.top = this._y + "px";
+    this.$outline.style.left = this._x + "px";
 
-    self._x += (self.endX - self._x) / self.delay;
-    self._y += (self.endY - self._y) / self.delay;
-    self.$outline.style.top = self._y + "px";
-    self.$outline.style.left = self._x + "px";
+    requestAnimationFrame(this.animateDotOutline.bind(this));
+  }
 
-    requestAnimationFrame(this.animateDotOutline.bind(self));
-  },
-
-  toggleCursorSize: function () {
-    var self = this;
-
-    if (self.cursorEnlarged) {
-      self.$dot.style.transform = "translate(-50%, -50%) scale(0.75)";
-      self.$outline.style.transform = "translate(-50%, -50%) scale(1.5)";
+  toggleCursorSize() {
+    if (this.cursorEnlarged) {
+      this.$dot.style.transform = "translate(-50%, -50%) scale(0.75)";
+      this.$outline.style.transform = "translate(-50%, -50%) scale(1.5)";
     } else {
-      self.$dot.style.transform = "translate(-50%, -50%) scale(1)";
-      self.$outline.style.transform = "translate(-50%, -50%) scale(1)";
+      this.$dot.style.transform = "translate(-50%, -50%) scale(1)";
+      this.$outline.style.transform = "translate(-50%, -50%) scale(1)";
     }
-  },
+  }
 
-  toggleCursorVisibility: function () {
-    var self = this;
-
-    if (self.cursorVisible) {
-      self.$dot.style.opacity = 1;
-      self.$outline.style.opacity = 1;
+  toggleCursorVisibility() {
+    if (this.cursorVisible) {
+      this.$dot.style.opacity = 1;
+      this.$outline.style.opacity = 1;
     } else {
-      self.$dot.style.opacity = 0;
-      self.$outline.style.opacity = 0;
+      this.$dot.style.opacity = 0;
+      this.$outline.style.opacity = 0;
     }
-  },
-};
+  }
+}
 
+const cursor = new Cursor();
 cursor.init();
