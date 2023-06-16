@@ -5,7 +5,7 @@ body * {
   cursor: none;
 }
 
-.cursor-sun {
+html[light-mode="light"] .cursor-sun {
   pointer-events: none;
   z-index: 2;
   position: absolute;
@@ -36,7 +36,7 @@ body * {
   }
 }
 
-.cursor-sun-outline {
+html[light-mode="light"] .cursor-sun-outline {
   pointer-events: none;
   z-index: 5;
   position: absolute;
@@ -51,16 +51,7 @@ body * {
   border-radius: 50%;
 } 
 
-/* @Gopal Start Working Here  */
-
-/* html,
-html *,
-body,
-body * {
-  cursor: none;
-}
-
-.cursor-sun {
+html[light-mode="dark"] .cursor-sun {
   pointer-events: none;
   z-index: 2;
   position: absolute;
@@ -73,7 +64,7 @@ body * {
   transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
-.cursor-sun::before {
+html[light-mode="dark"] .cursor-sun::before {
   content: "";
   position: absolute;
   top: 0;
@@ -98,7 +89,7 @@ body * {
   }
 }
 
-.cursor-sun-outline {
+html[light-mode="dark"] .cursor-sun-outline {
   pointer-events: none;
   z-index: 5;
   position: absolute;
@@ -111,4 +102,4 @@ body * {
   transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
   background-color: #a5a5a57b;
   border-radius: 50%;
-}  */
+}
