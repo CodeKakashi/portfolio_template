@@ -79,8 +79,9 @@
 
     <center>
         <!-- Home Section -->
-        <div class="text col-sm-6" style="margin-top: 140px;">Hi <span class="wave"><img src="assets/images/Hand.gif" width="35px"></span>&nbsp;, I'm <span class="header">Portfolio</span>
+        <div class="text col-sm-6" style="margin-top: 100px;">
             <div class="profile-img">
+                <span style="margin-bottom: 2rem;">Hi <span class="wave"><img src="assets/images/Hand.gif" width="35px"></span>&nbsp;, I'm <span class="header">Portfolio</span></span>
                 <div >
                     <img src="assets/images/dp_male.svg" alt="" class="rounded-circle" height="200" width="200">
                 </div>
@@ -230,8 +231,10 @@
         // Initialize Vanilla Tilt on the desired element
         var profileImg = document.querySelector(".profile-img");
         VanillaTilt.init(profileImg, {
-          max: 25,
-          speed: 400,
+          max: 15,
+          speed: 1000,
+          scale: 1.05,
+          perspective: 500
         });
       });
     </script>
