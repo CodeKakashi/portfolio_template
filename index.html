@@ -47,6 +47,12 @@
 
         gtag('config', 'G-M11CMZ12Q');
     </script>
+
+    <!-- Profile Tilt effect -->
+    <link rel="stylesheet" href="assets/css/tilt.css">
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.1/vanilla-tilt.min.js"></script>
 </head>
 
 <body class="no-scroll-preload">
@@ -74,8 +80,8 @@
     <center>
         <!-- Home Section -->
         <div class="text col-sm-6" style="margin-top: 140px;">Hi <span class="wave"><img src="assets/images/Hand.gif" width="35px"></span>&nbsp;, I'm <span class="header">Portfolio</span>
-            <div class="center">
-                <div>
+            <div class="profile-img">
+                <div >
                     <img src="assets/images/dp_male.svg" alt="" class="rounded-circle" height="200" width="200">
                 </div>
                 <br/>
@@ -218,6 +224,17 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js'></script>
     <script src="assets/js/particle.js"></script>
+
+    <script>
+        $(document).ready(function() {
+        // Initialize Vanilla Tilt on the desired element
+        var profileImg = document.querySelector(".profile-img");
+        VanillaTilt.init(profileImg, {
+          max: 25,
+          speed: 400,
+        });
+      });
+    </script>
 
 </body>
 
