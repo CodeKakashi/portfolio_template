@@ -5,6 +5,14 @@ body * {
   cursor: none;
 }
 
+input[type="checkbox"] {
+  cursor: none;
+}
+
+input[type="checkbox"]:hover {
+  cursor: none;
+}
+
 html[light-mode="light"] .cursor-sun {
   pointer-events: none;
   z-index: 2;

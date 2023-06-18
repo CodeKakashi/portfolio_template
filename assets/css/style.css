@@ -275,6 +275,11 @@ html {
   box-shadow: 0px 2px 5px 1px rgb(187, 134, 201);
 }
 
+.dark_toggler:checked:before {
+  transform: translate(150%);
+  transition: all 0.9s;
+  background-color: #bb86fc;
+}
 
 /* Yet to be implemented 
 .dark_toggler:before {
