@@ -71,7 +71,7 @@ const volunteershipcards = [
     title: "StudentCode-in 2020",
     cardImage: "assets/images/experience-page/2.jpg",
     description:
-      "Responsible for handling open source contributions for the project Awesome Developer Mr.DevX.",
+      "Responsible for handling open source contributions for the project Awesome Developer Kuriyeedu.",
   },
   {
     title: "PClub Summer Of Code 2020",
