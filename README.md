@@ -1,6 +1,6 @@
 # Portfolio
 
-Welcome to my portfolio! This repository showcases my projects, skills, and experiences in the field of [your field or expertise]. I have developed this portfolio to provide an overview of my work and highlight my abilities.
+Welcome to my portfolio! This repository showcases our projects, skills, and experiences in the field of [your field or expertise]. I have developed this portfolio to provide an overview of my work and highlight my abilities.
 
 ## Table of Contents
 

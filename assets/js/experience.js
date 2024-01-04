@@ -5,32 +5,81 @@ AOS.init();
 const experiencecards = document.querySelector(".experience-cards");
 const exp = [
   {
-    title: "Software Development Intern",
-    cardImage: "assets/images/experience-page/flipkart.jpg",
-    place: "Flipkart",
-    time: "(May, 2020 - present)",
-    desp: "<li>Worked to migrate Flipkart lite’s product page to AMP pages so that they load up instantly.</li> <li>Made changes in the current progressive web app of Flipkart to react to different actions performed on AMP page.</li> <li>Created a node module called “fk-amp” which abstracts all the files and middlewares and can be easily imported and used from express server.</li>",
+    title: "Web Development",
+    cardImage: "assets/images/experience-page/webDevelopment.png",
+    desp: "<li><strong>Full Stack Expertise:</strong> Proficient in both front-end and back-end development, ensuring end-to-end functionality and user experience.</li><li><strong>Responsive Design:</strong> Creating websites and web applications that adapt seamlessly to various devices for an optimal user experience.</li><li><strong>Cutting-Edge Technologies:</strong> Staying current with the latest web development frameworks and tools to deliver modern and efficient solutions.</li>"
   },
   {
-    title: "Student Developer",
-    cardImage: "assets/images/experience-page/gsoc.png",
-    place: "Google Summer Of Code",
-    time: "(Mar - Aug, 2019)",
-    desp: "<li>Worked with MOZILLA as a part of Google Summer Of Code.</li><li>Worked on Extension Activity Monitor which is a privileged extension for Firefox that uses the activityLog API (privileged API) to monitor the activities of the other installed extensions.</li><li>The activityLog API listens for logs from other installed extensions.</li>",
+    title: "Mobile App Development",
+    cardImage: "assets/images/experience-page/mobileAppDevelopment.png",
+    desp: "<li><strong>User-Centric Design:</strong> Focusing on creating intuitive and visually appealing interfaces to enhance the overall user experience.</li><li><strong>Platform-Specific Technologies:</strong> Utilizing programming languages and frameworks tailored to the target platforms, such as Swift for iOS or Kotlin/Java for Android.</li><li><strong>Cross-Platform Development:</strong> Employing tools like React Native or Flutter to build apps that can run on multiple platforms, minimizing development efforts and maximizing reach.</li>",
   },
   {
-    title: "Research Intern",
+    title: "Front End Development",
     cardImage: "assets/images/experience-page/IIT_Bombay.jpg",
-    place: "IIT, Bombay",
-    time: "(Dec, 19 - Jan, 20)",
-    desp: "<li>Worked on the project “LTI (Learning Tools Interoperability) 2.0 standards Implementation for ekShiksha.</li><li>Designed a software that would help faculty to create a quiz using the questions from the database based on his/her choice of topics and he should be provided with various facilities and options to create a quiz of his choice.</li>",
+    desp: "<li><strong>User Interface (UI) Design:</strong> Crafting the visual elements and layout of a website or application to ensure an appealing and user-friendly experience.</li><li><strong>HTML, CSS, and JavaScript:</strong> Utilizing these core technologies to structure content, style interfaces, and implement interactive features on the client side.</li><li><strong>Responsive Design:</strong> Ensuring that websites and applications adapt seamlessly to different devices and screen sizes for a consistent user experience.</li>",
+  },
+  {
+    title: "Back End Development",
+    cardImage: "assets/images/experience-page/IIT_Bombay.jpg",
+    desp: "<li><strong>Server-Side Logic:</strong> Implementing the functionality and business logic that power the application, ensuring data processing, storage, and retrieval.</li><li><strong>Database Management:</strong> Designing and managing databases to store and organize data efficiently, supporting the application's requirements.</li><li><strong>APIs and Integrations:</strong> Creating and integrating Application Programming Interfaces (APIs) to facilitate communication between different software systems and services.</li>",
+  },
+  {
+    title: "Digital Marketing",
+    cardImage: "assets/images/experience-page/IIT_Bombay.jpg",
+    desp: "<li><strong>Targeted Campaigns:</strong> Strategically planning and executing digital campaigns to reach specific audiences and achieve marketing goals.</li><li><strong>SEO and SEM:</strong> Optimizing online content to improve search engine visibility and managing paid advertising campaigns for increased online presence.</li><li><strong>Analytics and Insights:</strong> Utilizing data analytics tools to track and measure the performance of digital marketing efforts and refine strategies accordingly.</li>",
+  },
+  {
+    title: "Content Creation",
+    cardImage: "assets/images/experience-page/IIT_Bombay.jpg",
+    desp: "<li><strong>Creative Writing:</strong> Developing engaging and compelling written content for various platforms, ensuring a consistent brand voice.</li><li><strong>Visual Content:</strong> Creating visually appealing graphics, images, and videos to enhance the overall storytelling and user experience.</li><li><strong>Content Strategy:</strong> Planning and implementing content strategies that align with business goals, target audiences, and current market trends.</li>",
+  },
+  {
+    title: "E-commerce Solutions",
+    cardImage: "assets/images/experience-page/IIT_Bombay.jpg",
+    desp: "<li><strong>Online Store Development:</strong> Building and customizing e-commerce platforms to provide seamless and secure online shopping experiences.</li><li><strong>Payment Gateway Integration:</strong> Integrating secure payment options to facilitate smooth and reliable online transactions for customers.</li><li><strong>Inventory Management:</strong> Implementing efficient systems to manage product listings, inventory levels, and order fulfillment processes.</li>",
+  },
+  {
+    title: "Database Management",
+    cardImage: "assets/images/experience-page/IIT_Bombay.jpg",
+    desp: "<li><strong>Database Design:</strong> Planning and creating efficient database structures to store and organize data in a scalable and secure manner.</li><li><strong>Data Security:</strong> Implementing measures to ensure the confidentiality, integrity, and availability of data through encryption and access controls.</li><li><strong>Performance Optimization:</strong> Fine-tuning and optimizing database queries and configurations to enhance overall system performance.</li>",
+  },
+  {
+    title: "Social Media Management",
+    cardImage: "assets/images/experience-page/IIT_Bombay.jpg",
+    desp: "<li><strong>Content Planning:</strong> Developing and scheduling content calendars to maintain a consistent and engaging social media presence.</li><li><strong>Community Engagement:</strong> Interacting with the audience, responding to comments, and fostering a sense of community on social media platforms.</li><li><strong>Analytics and Reporting:</strong> Monitoring social media metrics, analyzing performance, and providing insights to improve future strategies.</li>",
+  },
+  {
+    title: "Training and Workshops",
+    cardImage: "assets/images/experience-page/IIT_Bombay.jpg",
+    desp: "<li><strong>Customized Programs:</strong> Tailoring training sessions to meet specific organizational needs and goals, providing targeted learning experiences.</li><li><strong>Interactive Workshops:</strong> Creating engaging and hands-on workshop environments to foster active participation and knowledge retention.</li><li><strong>Professional Development:</strong> Offering training modules that contribute to the continuous improvement and skill development of individuals and teams.</li>",
+  },
+  {
+    title: "Logo Design",
+    cardImage: "assets/images/experience-page/IIT_Bombay.jpg",
+    desp: "<li><strong>Brand Identity:</strong> Crafting unique and memorable logos that represent the essence and values of a brand.</li><li><strong>Visual Storytelling:</strong> Designing logos that communicate a brand's story and resonate with its target audience.</li><li><strong>Versatility:</strong> Ensuring logos are scalable, recognizable, and effective across various mediums and applications.</li>",
+  },
+  {
+    title: "Poster Designing",
+    cardImage: "assets/images/experience-page/IIT_Bombay.jpg",
+    desp: "<li><strong>Visual Impact:</strong> Creating eye-catching and compelling posters that effectively communicate key messages and information.</li><li><strong>Typography and Layout:</strong> Implementing thoughtful typography and layout designs to enhance the overall readability and aesthetics of posters.</li><li><strong>Branding Consistency:</strong> Aligning poster designs with existing brand elements to maintain a cohesive visual identity.</li>",
+  },
+  {
+    title: "UI/UX (User Interface/User Experience)",
+    cardImage: "assets/images/experience-page/IIT_Bombay.jpg",
+    desp: "<li><strong>User-Centric Design:</strong> Prioritizing the needs and preferences of users to create intuitive and enjoyable digital experiences.</li><li><strong>Wireframing and Prototyping:</strong> Building visual prototypes and wireframes to test and refine the user interface before development.</li><li><strong>Usability Testing:</strong> Conducting thorough testing to ensure interfaces are user-friendly, efficient, and meet accessibility standards.</li>",
+  },
+  {
+    title: "Graphic Design",
+    cardImage: "assets/images/experience-page/IIT_Bombay.jpg",
+    desp: "<li><strong>Visual Branding:</strong> Developing cohesive visual elements, including color schemes, typography, and imagery, to establish a strong brand identity.</li><li><strong>Print and Digital Media:</strong> Creating graphics for both online and offline platforms, ensuring consistency across various mediums.</li><li><strong>Creative Problem Solving:</strong> Applying design thinking to solve communication challenges and convey messages effectively through visual elements.</li>",
   },
 ];
 
 const showCards2 = () => {
   let output = "";
   exp.forEach(
-    ({ title, cardImage, place, time, desp }) =>
+    ({ title, cardImage, desp }) =>
       (output += `        
     <div class="col gaap" data-aos="fade-up" data-aos-easing="linear" data-aos-delay="100" data-aos-duration="400"> 
       <div class="card card1">
@@ -40,10 +89,6 @@ const showCards2 = () => {
             <div class="title">
               <h3>${title}</h3>
             </div>
-            <p class="meta">
-              <span class="pre-heading">${place}</span><br>
-              <span class="author">${time}</span>
-            </p>
             <ol>
               ${desp}
             </ol>

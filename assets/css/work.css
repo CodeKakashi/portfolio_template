@@ -207,7 +207,12 @@ ul ol {
 @media only screen and (min-width: 768px) {
   .card1 {
     flex-direction: row;
-    max-height: 70vh;
+    max-height: 30vh;
+    overflow-y: auto;
+  }
+  
+  .card1 li{
+    font-size: 1vw; 
   }
 
   .card1 h3 {
@@ -218,8 +223,8 @@ ul ol {
     border-top-left-radius: 13px;
     border-bottom-left-radius: 13px;
     border-top-right-radius: 0;
-    max-width: 300px;
-    height: inherit;
+    max-width: 200px;
+    height: 100%;
     width: 100%;
   }
 }
@@ -232,8 +237,9 @@ ul ol {
 
 @media only screen and (max-width: 767px) {
   .card1 .featured-image {
-    height: 400px;
+    height: 250px;
     width: 100%;
+    object-fit: cover; 
   }
 }
 
